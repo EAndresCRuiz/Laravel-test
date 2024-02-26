@@ -2,7 +2,7 @@
 
 @section('content') 
 <div class="card">
-  <div class="card-header">Contact Page</div>
+  <div class="card-header">Create Contact</div>
   <div class="card-body">
       
       <form action="{{ route('contact.store') }}" method="POST">

@@ -23,8 +23,8 @@ class ContactRequest extends FormRequest
     {
         return [
             'name' => 'required|min:6',
-            'contact' => 'required|min_digits:9|max_digits:9|numeric|unique:contacts',
-            'email' => 'email:rfc,dns|unique:contacts'
+            'contact' => 'required|min_digits:9|max_digits:9|numeric|unique:contacts,contact,'.$this->id,
+            'email' => 'email:rfc,dns|unique:contacts,email,'.$this->id
         ];
     }
 }
