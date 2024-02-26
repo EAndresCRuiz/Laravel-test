@@ -7,6 +7,7 @@
 <body>
   
 <div class="container">
+    @include('contact._partials.messages')
     @yield('content')
 </div>
    

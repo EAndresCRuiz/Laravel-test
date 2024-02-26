@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contact;
+use App\Http\Requests\ContactRequest;
 
 class ContactController extends Controller
 {
@@ -21,15 +22,16 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
-        //
+        Contact::create($request->all());
+        return redirect('contact')->with('success', 'Contact Addedd!');
     }
 
     /**
